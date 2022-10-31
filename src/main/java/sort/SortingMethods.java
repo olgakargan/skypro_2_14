@@ -1,10 +1,11 @@
 package sort;
 
 import com.example.skypro_2_15.MList;
+import org.jetbrains.annotations.NotNull;
 
 
 public class SortingMethods {
-    private void swap(MList mList, int i, int j) {
+    private void swap(@NotNull MList mList, int i, int j) {
         Integer item = mList.get(i);
         mList.set(i, mList.get(j));
         mList.set(j, item);
@@ -45,4 +46,7 @@ public class SortingMethods {
         return mList;
     }
 
+    public MList quickSort(MList mList) {
+        return mList;
+    }
 }

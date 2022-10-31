@@ -1,10 +1,11 @@
-package test;
+package skypro_2_16;
 
 import com.example.skypro_2_15.MList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sort.SortingMethods;
+
 
 import java.util.Arrays;
 import java.util.Random;
@@ -61,6 +62,19 @@ class SortingMethodsTest {
         MList sortedMList = sortingMethods.insertionSort(mList);
 
         System.out.println("insertionSort");
+        System.out.println(System.currentTimeMillis() - start);
+        System.out.println();
+
+        Arrays.sort(expectedArray);
+        Assertions.assertArrayEquals(expectedArray, sortedMList.toArray());
+    }
+
+    @Test
+    void quickSort() {
+        long start = System.currentTimeMillis();
+        MList sortedMList = sortingMethods.quickSort(mList);
+
+        System.out.println("quickSort");
         System.out.println(System.currentTimeMillis() - start);
         System.out.println();
 
